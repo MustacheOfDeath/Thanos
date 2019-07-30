@@ -3,18 +3,17 @@ package utility;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 
-public class processUtils {
-    public processUtils() {
+public class processUtilsWindows {
+    public processUtilsWindows() {
     }
 
-    public static List<String> listRunningProcesses() {
+    public static List<String> listRunningProcessesWin() {
+
         List<String> processList = new ArrayList<>();
         try {
-
             File file = File.createTempFile("realhowto", ".vbs");
             file.deleteOnExit();
             FileWriter fw = new java.io.FileWriter(file);
@@ -47,7 +46,7 @@ public class processUtils {
         return processList;
     }
 
-    public static void execKill(List<String> killApp) throws InterruptedException {
+    public static void execKillWin(List<String> killApp) throws InterruptedException {
         for (int i = 0; i < killApp.size(); i++) {
             try {
                 System.out.print("Killing " + killApp.get(i));
@@ -65,19 +64,5 @@ public class processUtils {
             }
         }
         System.out.println("\n\nKilled " + killApp.size() + " app");
-    }
-
-    public static List<String> createRandomList(List<String> listToRandomize) {
-        List<String> randomList = new ArrayList<>();
-        Random randomGenerator = new Random();
-        List<Integer> previousNum = new ArrayList<>();
-        do {
-            int randomNum = randomGenerator.nextInt(listToRandomize.size());
-            if (!previousNum.contains(randomNum)) {
-                previousNum.add(randomNum);
-                randomList.add(listToRandomize.get(randomNum));
-            }
-        } while (randomList.size() < (listToRandomize.size() / 2));
-        return randomList;
     }
 }

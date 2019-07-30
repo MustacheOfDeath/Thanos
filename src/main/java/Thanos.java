@@ -1,11 +1,8 @@
-import java.util.*;
-
-import static utility.processUtils.*;
+import static utility.osSwitch.*;
 
 public class Thanos {
 
     public static void main(String[] args) throws InterruptedException {
-        List<String> randomList = createRandomList(listRunningProcesses());
-        execKill(randomList);
+        searchOs();
     }
 }
