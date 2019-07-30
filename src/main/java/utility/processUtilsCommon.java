@@ -11,7 +11,7 @@ public class processUtilsCommon {
         List<Integer> previousNum = new ArrayList<>();
         do {
             int randomNum = randomGenerator.nextInt(listToRandomize.size());
-            if (!previousNum.contains(randomNum)) {
+            if ((!previousNum.contains(randomNum)) && !("").equals(listToRandomize.get(randomNum).trim())) {
                 previousNum.add(randomNum);
                 randomList.add(listToRandomize.get(randomNum));
             }
