@@ -15,10 +15,13 @@ public class processUtilsLinux {
         List<String> processList = new ArrayList<>();
         try {
             String process;
-            Process p = Runtime.getRuntime().exec("ps -p");
+            String tempProcess = "";
+            Process p = Runtime.getRuntime().exec("ps -ax");
             BufferedReader input = new BufferedReader(new InputStreamReader(p.getInputStream()));
+
             while ((process = input.readLine()) != null) {
-                processList.add(process);
+                tempProcess = prepareString(process);
+                processList.add(tempProcess);
             }
             input.close();
         } catch (Exception err) {
@@ -34,21 +37,32 @@ public class processUtilsLinux {
             if (isHard) {
                 for (int i = 0; i < killApp.size(); i++) {
                     System.out.print("Killing " + killApp.get(i));
-                    //Runtime.getRuntime().exec("kill -19 "+killApp.get(i));
-                    System.out.println("-----> KILLED");
+                    //Runtime.getRuntime().exec("killall "+killApp.get(i));
+                    System.out.println(" -----> KILLED");
                 }
                 System.out.println("\n\nKilled " + killApp.size() + " app");
             } else {
-                String killSkype = "0000";
+                String killSkype = "Skype";
                 System.out.print("Killing " + killSkype);
-                Runtime.getRuntime().exec("kill -19 " + killSkype);
-                System.out.println("-----> KILLED");
+                Runtime.getRuntime().exec("killAll" + killSkype);
+                System.out.println(" -----> KILLED");
             }
             TimeUnit.MILLISECONDS.sleep(10);
 
         } catch (IOException ioe) {
             ioe.printStackTrace();
         }
+    }
+
+    public static String prepareString(String process) {
+        String tempProcess = "";
+        int endIndex = process.lastIndexOf("/");
+        if (endIndex != -1) {
+            tempProcess = process.substring(endIndex + 1);
+        }
+        tempProcess = tempProcess.split("-")[0];
+
+        return tempProcess;
     }
 }
 
