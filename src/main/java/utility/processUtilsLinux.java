@@ -24,6 +24,7 @@ public class processUtilsLinux {
         } catch (Exception err) {
             err.printStackTrace();
         }
+        System.out.println(processList.size() + " killable app\n\n");
         return processList;
     }
 
