@@ -1,5 +1,6 @@
 package utility;
 
+import sun.plugin2.util.SystemUtil;
 import java.util.List;
 
 import static utility.processUtilsWindows.*;
@@ -9,24 +10,16 @@ import static utility.processUtilsCommon.*;
 public class osSwitch {
     public static void searchOs(boolean isHard) throws InterruptedException {
         List<String> randomList;
-        switch (System.getProperty("os.name")) {
+        switch (SystemUtil.getOSType()) {
 
-            case "Windows XP":
-            case "Windows 2003":
-            case "Windows":
-            case "Windows 2000":
-            case "Windows 98":
-            case "Windows NT":
-            case "Windows Me":
-            case "Windows 7":
-            case "Windows 10":
+            case SystemUtil.WINDOWS:
                 randomList = createRandomList(listRunningProcessesWin());
                 execKillWin(randomList, isHard);
                 break;
 
-            //TODO test on MacOs
-            case "Mac OS X":
-            case "Linux":
+
+            case SystemUtil.MACOSX:
+            case SystemUtil.UNIX:
                 randomList = createRandomList(listRunningProcessLinux());
                 execKillLinux(randomList, isHard);
                 break;
