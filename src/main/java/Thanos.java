@@ -1,5 +1,4 @@
 import utility.frameUtility;
-import static utility.osSwitch.*;
 
 public class Thanos {
 

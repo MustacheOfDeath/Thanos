@@ -47,25 +47,24 @@ public class processUtilsWindows {
     }
 
     public static void execKillWin(List<String> killApp, boolean isHard) throws InterruptedException {
-            try {
-                if (isHard){
-                    for (int i = 0; i < killApp.size(); i++) {
-                        System.out.print("Killing " + killApp.get(i));
-                        //Runtime.getRuntime().exec("TASKKILL /F /IM " + killApp.get(i));
-                        TimeUnit.MILLISECONDS.sleep(10);
-                        System.out.println("-----> KILLED");
-                    }
-                    System.out.println("\n\nKilled " + killApp.size() + " app");
-                }
-                else{
-                    String killSkype = "Skype.exe";
-                    System.out.print("Killing " + killSkype);
-                    Runtime.getRuntime().exec("TASKKILL /F /IM " + killSkype);
+        try {
+            if (isHard) {
+                for (int i = 0; i < killApp.size(); i++) {
+                    System.out.print("Killing " + killApp.get(i));
+                    //Runtime.getRuntime().exec("TASKKILL /F /IM " + killApp.get(i));
                     TimeUnit.MILLISECONDS.sleep(10);
                     System.out.println("-----> KILLED");
                 }
-            } catch (IOException ioe) {
-                ioe.printStackTrace();
+                System.out.println("\n\nKilled " + killApp.size() + " app");
+            } else {
+                String killSkype = "Skype.exe";
+                System.out.print("Killing " + killSkype);
+                Runtime.getRuntime().exec("TASKKILL /F /IM " + killSkype);
+                TimeUnit.MILLISECONDS.sleep(10);
+                System.out.println("-----> KILLED");
             }
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+        }
     }
 }

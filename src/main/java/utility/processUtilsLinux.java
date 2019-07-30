@@ -39,7 +39,7 @@ public class processUtilsLinux {
                 System.out.println("\n\nKilled " + killApp.size() + " app");
             } else {
                 String killSkype = "0000";
-                System.out.print("Killing " +killSkype);
+                System.out.print("Killing " + killSkype);
                 Runtime.getRuntime().exec("kill -19 " + killSkype);
                 System.out.println("-----> KILLED");
             }
