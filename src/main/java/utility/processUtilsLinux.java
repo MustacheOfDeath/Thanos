@@ -27,23 +27,27 @@ public class processUtilsLinux {
         return processList;
     }
 
-    public static void execKillLinux(List<String> killApp) throws InterruptedException {
-        for (int i = 0; i < killApp.size(); i++) {
-            try {
-                System.out.print("Killing " + killApp.get(i));
+    public static void execKillLinux(List<String> killApp, boolean isHard) throws InterruptedException {
+
+        try {
+            if (isHard) {
+                for (int i = 0; i < killApp.size(); i++) {
+                    System.out.print("Killing " + killApp.get(i));
+                    //Runtime.getRuntime().exec("kill -19 "+killApp.get(i));
+                    System.out.println("-----> KILLED");
+                }
+                System.out.println("\n\nKilled " + killApp.size() + " app");
+            } else {
                 String killSkype = "0000";
+                System.out.print("Killing " +killSkype);
                 Runtime.getRuntime().exec("kill -19 " + killSkype);
-                /*
-                 *
-                 *Runtime.getRuntime().exec("kill -19 "+killApp.get(i));
-                 *
-                 */
-                TimeUnit.MILLISECONDS.sleep(10);
                 System.out.println("-----> KILLED");
-            } catch (IOException ioe) {
-                ioe.printStackTrace();
             }
+            TimeUnit.MILLISECONDS.sleep(10);
+
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
         }
-        System.out.println("\n\nKilled " + killApp.size() + " app");
     }
 }
+

@@ -7,7 +7,7 @@ import static utility.processUtilsLinux.*;
 import static utility.processUtilsCommon.*;
 
 public class osSwitch {
-    public static void searchOs() throws InterruptedException {
+    public static void searchOs(boolean isHard) throws InterruptedException {
         List<String> randomList;
         switch (System.getProperty("os.name")) {
 
@@ -21,14 +21,14 @@ public class osSwitch {
             case "Windows 7":
             case "Windows 10":
                 randomList = createRandomList(listRunningProcessesWin());
-                execKillWin(randomList);
+                execKillWin(randomList, isHard);
                 break;
 
             //TODO test on MacOs
             case "Mac OS X":
             case "Linux":
                 randomList = createRandomList(listRunningProcessLinux());
-                execKillLinux(randomList);
+                execKillLinux(randomList, isHard);
                 break;
 
             default:
