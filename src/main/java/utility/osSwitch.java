@@ -1,6 +1,7 @@
 package utility;
 
-import sun.plugin2.util.SystemUtil;
+import org.apache.commons.lang3.SystemUtils;
+
 import java.util.List;
 
 import static utility.processUtilsWindows.*;
@@ -10,22 +11,12 @@ import static utility.processUtilsCommon.*;
 public class osSwitch {
     public static void searchOs(boolean isHard) throws InterruptedException {
         List<String> randomList;
-        switch (SystemUtil.getOSType()) {
-
-            case SystemUtil.WINDOWS:
-                randomList = createRandomList(listRunningProcessesWin());
-                execKillWin(randomList, isHard);
-                break;
-
-
-            case SystemUtil.MACOSX:
-            case SystemUtil.UNIX:
-                randomList = createRandomList(listRunningProcessLinux());
-                execKillLinux(randomList, isHard);
-                break;
-
-            default:
-                break;
+        if (SystemUtils.IS_OS_WINDOWS) {
+            randomList = createRandomList(listRunningProcessesWin());
+            execKillWin(randomList, isHard);
+        } else if (SystemUtils.IS_OS_LINUX || SystemUtils.IS_OS_MAC) {
+            randomList = createRandomList(listRunningProcessLinux());
+            execKillLinux(randomList, isHard);
         }
     }
 }
