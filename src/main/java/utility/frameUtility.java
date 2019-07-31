@@ -73,16 +73,15 @@ public class frameUtility extends JFrame {
     }
 
     public void showThanos() {
-        //TODO insert Thanos image
         //frame
-        setSize(500, 500);
+        setSize(1000, 600);
         setLocationRelativeTo(null);
-
+        //TODO path
+        ImageIcon thanos = new ImageIcon("E:\\Sviluppo\\workspace_intellij\\Thanos\\src\\main\\java\\image\\thanos.jpg");
         //Label
-        JLabel thanosLabel = new JLabel("THANOS IMAGE");
-
+        JLabel thanosLabel = new JLabel("");
+        thanosLabel.setIcon(thanos);
         //Panel
-        jp.setSize(500, 500);
         jp.add(thanosLabel);
     }
 }
