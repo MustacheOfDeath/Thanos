@@ -76,8 +76,7 @@ public class frameUtility extends JFrame {
         //frame
         setSize(1000, 600);
         setLocationRelativeTo(null);
-        //TODO path
-        ImageIcon thanos = new ImageIcon("E:\\Sviluppo\\workspace_intellij\\Thanos\\src\\main\\java\\image\\thanos.jpg");
+        ImageIcon thanos = new ImageIcon(".\\src\\main\\java\\image\\thanos.jpg");
         //Label
         JLabel thanosLabel = new JLabel("");
         thanosLabel.setIcon(thanos);
