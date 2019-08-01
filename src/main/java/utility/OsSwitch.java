@@ -4,11 +4,11 @@ import org.apache.commons.lang3.SystemUtils;
 
 import java.util.List;
 
-import static utility.processUtilsWindows.*;
-import static utility.processUtilsLinux.*;
-import static utility.processUtilsCommon.*;
+import static utility.ProcessUtilsWindows.*;
+import static utility.ProcessUtilsLinux.*;
+import static utility.ProcessUtilsCommon.*;
 
-public class osSwitch {
+public class OsSwitch {
     public static void searchOs(boolean isHard) throws InterruptedException {
         List<String> randomList;
         if (SystemUtils.IS_OS_WINDOWS) {

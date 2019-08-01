@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class processUtilsLinux {
-    public processUtilsLinux() {
+public class ProcessUtilsLinux {
+    public ProcessUtilsLinux() {
     }
 
     public static List<String> listRunningProcessLinux() {

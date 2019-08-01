@@ -1,8 +1,8 @@
-import utility.frameUtility;
+import utility.FrameUtility;
 
 public class Thanos {
 
     public static void main(String[] args) {
-        new frameUtility();
+        new FrameUtility();
     }
 }

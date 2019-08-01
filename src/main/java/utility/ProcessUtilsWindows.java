@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 
-public class processUtilsWindows {
-    public processUtilsWindows() {
+public class ProcessUtilsWindows {
+    public ProcessUtilsWindows() {
     }
 
     public static List<String> listRunningProcessesWin() {

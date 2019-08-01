@@ -9,9 +9,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import static utility.osSwitch.*;
+import static utility.OsSwitch.*;
 
-public class frameUtility extends JFrame {
+public class FrameUtility extends JFrame {
     boolean isHard = false;
     static int SOFT = 0;
     static int HARD = 1;
@@ -21,7 +21,7 @@ public class frameUtility extends JFrame {
     JButton soft = new JButton("Soft Kill");
     JButton hard = new JButton("Hard Kill");
 
-    public frameUtility() {
+    public FrameUtility() {
         setTitle("THANOS");
         setLayout(new FlowLayout());
         setJPanelandComponents();
@@ -80,14 +80,11 @@ public class frameUtility extends JFrame {
         setLocationRelativeTo(null);
         Image image = null;
         try {
-            image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("/image/thanos.jpg"));
+            image = ImageIO.read(getClass().getResourceAsStream("/image/thanos.jpg"));
         } catch (IOException e) {
             e.printStackTrace();
         }
-        ImageIcon thanos = new ImageIcon(image); //works only before build
-
-//        ImageIcon thanos = new ImageIcon(".\\src\\main\\java\\image\\thanos.jpg"); //works only before build
-        //ImageIcon thanos = new ImageIcon(".\\Thanos\\thanos.jpg"); //works only after build
+        ImageIcon thanos = new ImageIcon(image);
         //Label
         JLabel thanosLabel = new JLabel("");
         thanosLabel.setIcon(thanos);

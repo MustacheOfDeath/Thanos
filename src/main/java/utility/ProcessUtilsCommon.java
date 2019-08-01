@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class processUtilsCommon {
+public class ProcessUtilsCommon {
     public static List<String> createRandomList(List<String> listToRandomize) {
         List<String> randomList = new ArrayList<>();
         Random randomGenerator = new Random();
