@@ -1,4 +1,5 @@
-import utility.FrameUtility;
+package it.lf.thanos;
+import it.lf.thanos.utility.FrameUtility;
 
 public class Thanos {
 

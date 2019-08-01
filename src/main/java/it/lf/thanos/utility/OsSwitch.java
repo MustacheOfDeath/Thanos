@@ -1,12 +1,12 @@
-package utility;
+package it.lf.thanos.utility;
 
 import org.apache.commons.lang3.SystemUtils;
 
-import java.util.List;
+import static it.lf.thanos.utility.ProcessUtilsCommon.*;
+import static it.lf.thanos.utility.ProcessUtilsLinux.*;
+import static it.lf.thanos.utility.ProcessUtilsWindows.*;
 
-import static utility.ProcessUtilsWindows.*;
-import static utility.ProcessUtilsLinux.*;
-import static utility.ProcessUtilsCommon.*;
+import java.util.List;
 
 public class OsSwitch {
     public static void searchOs(boolean isHard) throws InterruptedException {

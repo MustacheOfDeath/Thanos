@@ -1,4 +1,4 @@
-package utility;
+package it.lf.thanos.utility;
 
 import java.io.BufferedReader;
 import java.io.IOException;

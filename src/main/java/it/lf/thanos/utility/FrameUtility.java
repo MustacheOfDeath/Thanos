@@ -1,7 +1,10 @@
-package utility;
+package it.lf.thanos.utility;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
+
+import static it.lf.thanos.utility.OsSwitch.*;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,10 +12,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import static utility.OsSwitch.*;
-
 public class FrameUtility extends JFrame {
-    boolean isHard = false;
+	
+	private static final long serialVersionUID = 1L;
+
+	boolean isHard = false;
     static int SOFT = 0;
     static int HARD = 1;
 

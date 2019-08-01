@@ -1,4 +1,4 @@
-package utility;
+package it.lf.thanos.utility;
 
 import java.util.ArrayList;
 import java.util.List;
