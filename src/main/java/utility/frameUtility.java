@@ -1,9 +1,11 @@
 package utility;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -76,7 +78,15 @@ public class frameUtility extends JFrame {
         //frame
         setSize(1000, 600);
         setLocationRelativeTo(null);
-        ImageIcon thanos = new ImageIcon(".\\src\\main\\java\\image\\thanos.jpg"); //works only before build
+        Image image = null;
+        try {
+            image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("/image/thanos.jpg"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        ImageIcon thanos = new ImageIcon(image); //works only before build
+
+//        ImageIcon thanos = new ImageIcon(".\\src\\main\\java\\image\\thanos.jpg"); //works only before build
         //ImageIcon thanos = new ImageIcon(".\\Thanos\\thanos.jpg"); //works only after build
         //Label
         JLabel thanosLabel = new JLabel("");
