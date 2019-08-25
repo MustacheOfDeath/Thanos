@@ -12,7 +12,7 @@ public class ProcessUtilsFactory {
 	public static IProcessUtils getProcessUtils(OS os) {
 		if (os == OS.WIN) {
 			return new ProcessUtilsWindows();
-		} else if (os == OS.WIN) {
+		} else if (os == OS.LINUX) {
 			return new ProcessUtilsLinux();
 		}
 		throw new IllegalArgumentException("OS not valid: " + os);
