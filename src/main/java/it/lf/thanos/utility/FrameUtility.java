@@ -53,7 +53,10 @@ public class FrameUtility extends JFrame {
                 } catch (InterruptedException ex) {
                     ex.printStackTrace();
                 }
-                dispose();
+                soft.setVisible(false);
+                hard.setVisible(false);
+                showThanos();
+                //dispose();
             }
         });
         hard.addActionListener(new ActionListener() {
